@@ -1,5 +1,5 @@
 
-### 서버 시작하기
+<!-- ### 서버 시작하기
 
 
 
@@ -11,10 +11,9 @@ $ yarn
 $ yarn build
 $ cd ..
 $ docker-compose up --build -d
-```
+``` -->
 
-### 개발 서버 시작하기
-
+### 가상서버에서 docker.dev 돌려보기
 ```shell
 $ git clone https://github.com/KPUHeyDoctor/docker.git
 $ git submodule update --recursive --remote --init
