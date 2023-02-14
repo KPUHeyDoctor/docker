@@ -18,11 +18,25 @@ services:
     container_name: frontend
     build:
       context: ./frontend
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     tty: true
 
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+    ports:
+      - 80:80
+    volumes:
+      - build_folder:/var/www/frontend
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - app-tier
 
 
 networks:

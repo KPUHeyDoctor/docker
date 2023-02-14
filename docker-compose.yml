@@ -24,6 +24,19 @@ services:
     tty: true
 
 
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+    ports:
+      - 80:80
+    volumes:
+      - build_folder:/var/www/frontend
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - app-tier
 
 networks:
   app-tier:
