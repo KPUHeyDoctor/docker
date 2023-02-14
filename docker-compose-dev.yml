@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+
+  backend: 
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    expose:
+      - "5000"
+    networks:
+      - app-tier
+
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    tty: true
+
+
+
+networks:
+  app-tier:
+    driver: bridge
