@@ -7,9 +7,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "5000:5000"
-    expose:
-      - "5000"
+      - "5001:5001"
     networks:
       - app-tier
 
@@ -18,7 +16,7 @@ services:
     container_name: frontend
     build:
       context: ./frontend
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     tty: true
@@ -31,12 +29,13 @@ services:
     ports:
       - 80:80
     volumes:
-      - build_folder:/var/www/frontend
+      - ./frontend:/usr/src/app/static_files
     depends_on:
       - frontend
       - backend
     networks:
       - app-tier
+
 
 networks:
   app-tier:
