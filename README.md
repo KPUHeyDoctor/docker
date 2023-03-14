@@ -17,5 +17,5 @@ $ docker-compose up --build -d
 ```shell
 $ git clone https://github.com/KPUHeyDoctor/docker.git
 $ git submodule update --recursive --remote --init
-$ docker-compose -f docker-compose-dev.yml up -d
+$ docker-compose -f docker-compose.yml up -d
 ```
