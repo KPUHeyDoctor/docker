@@ -1,16 +1,6 @@
 version: "3"
 
 services:
-  backend: 
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    ports:
-      - "5001:5001"
-    networks:
-      - app-tier
-
-
   frontend:
     container_name: frontend
     build:
@@ -20,20 +10,29 @@ services:
       - ./frontend/:/frontend
       - build_folder:/frontend/build
       - ./frontend/node_modules/:/frontend/node_modules
-    ports:
-      - "3000:3000"
     tty: true
 
 
+  backend: 
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    networks:
+      - app-tier
 
   nginx:
     container_name: nginx
     build:
       context: ./nginx
+      dockerfile: Dockerfile
     ports:
-      - 80:80
+      - "80:80"
+    expose:
+      - 80
     volumes:
-      - build_folder:/var/www/frontend;
+      - build_folder:/var/www/frontend
     depends_on:
       - frontend
       - backend
