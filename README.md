@@ -18,6 +18,10 @@ $ docker-compose up --build -d
 $ git clone https://github.com/KPUHeyDoctor/docker.git
 $ git submodule update --recursive --remote --init
 $ cd frontend
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+. ~/.nvm/nvm.sh
+$ nvm install node
+$ npm install --global yarn
 $ yarn
 $ yarn build
 $ cd ..
