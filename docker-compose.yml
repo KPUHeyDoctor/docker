@@ -59,6 +59,7 @@ services:
       - backend
     networks:
       - app-tier
+    command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
 
   certbot: #certbot 컨테이너 추가
     image: certbot/certbot
