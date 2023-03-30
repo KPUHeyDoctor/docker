@@ -35,6 +35,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5001:5001"
+    depends_on:
+      - db
     networks:
       - app-tier
 
