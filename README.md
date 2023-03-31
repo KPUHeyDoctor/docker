@@ -1,5 +1,5 @@
 
-<!-- ### 서버 시작하기
+### 서버 시작하기
 
 
 
@@ -10,10 +10,9 @@ $ cd frontend
 $ yarn
 $ yarn build
 $ cd ..
-$ docker-compose up --build -d
-``` -->
-
-### 가상서버에서 docker.dev 돌려보기
+$ docker-compose -f docker-compose.yml up -d
+``` 
+<!-- ### 가상서버에서 docker.dev 돌려보기
 ```shell
 $ git clone https://github.com/KPUHeyDoctor/docker.git
 $ cd docker
@@ -26,4 +25,4 @@ $ yarn
 $ yarn build
 $ cd ..
 $ docker-compose -f docker-compose.yml up -d
-```
+``` --> 
