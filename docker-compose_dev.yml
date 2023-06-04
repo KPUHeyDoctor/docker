@@ -14,6 +14,7 @@ services:
     networks:
       - app-tier
     volumes:
+      - mysql-data:/var/lib/mysql
       - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./backend/my.cnf:/etc/mysql/my.cnf
     healthcheck:
@@ -36,3 +37,6 @@ services:
 networks:
   app-tier:
     driver: bridge
+
+volumes:
+  mysql-data:
