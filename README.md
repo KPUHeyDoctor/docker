@@ -1,8 +1,6 @@
 
 # infra
 
-
-
 <!--```shell
 $ git clone https://github.com/KPUHeyDoctor/docker.git
 $ git submodule update --recursive --remote --init
